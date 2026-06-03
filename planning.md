@@ -9,27 +9,28 @@
 
 ## Domain
 
-<!-- What domain did you choose? Why is this knowledge valuable and hard to find through official channels? -->
+I chose the domain "Stevens Institute of Technology Commuter Guide" which covers the practical realities and tips for commuter students at my university from unofficial sources. This knowledge is valuable and hard to find through official channels because they cover general information such as permit prices and transit links, but they do not capture the lived experiences that drive commuter decisions, such as overnight parking locations, commute accessibility, and pros and cons of commuting vs dorming. Personal, specific questions about these experiences and the tradeoffs associated can be answered only by students who have lived through them. Sources about the area could also be useful information.
 
 ---
 
 ## Documents
 
-<!-- List your specific sources: URLs, subreddit names, forum threads, or file descriptions.
-     Aim for at least 10 sources that together cover different subtopics or perspectives within your domain. -->
+
 
 | # | Source | Description | URL or location |
 |---|--------|-------------|-----------------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
-| 6 | | | |
-| 7 | | | |
-| 8 | | | |
-| 9 | | | |
-| 10 | | | |
+| 1 | Reddit | Student discussion about the overall commuter experience at Stevens, including campus culture, social life, scheduling, and challenges faced by commuters. | https://www.reddit.com/r/stevens/comments/1tt8xaw/how_is_stevens_for_a_commuter/ |
+| 2 | Reddit | Advice comparing living near campus versus commuting, with insights into travel times, costs, and student preferences. | https://www.reddit.com/r/stevens/comments/1rlx081/housingcommute_advice/ |
+| 3 | Reddit | Discussion weighing the pros and cons of dorming versus commuting, including social opportunities, convenience, and financial considerations. | https://www.reddit.com/r/stevens/comments/1s0tapv/dorm_or_commute/ |
+| 4 | Reddit | Community recommendations and experiences regarding free overnight parking options near Stevens and Hoboken. | https://www.reddit.com/r/stevens/comments/1g8gnag/where_can_i_park_overnight_for_free/ |
+| 5 | Reddit | Information about parking availability, permits, pricing, and challenges for students commuting by car. | https://www.reddit.com/r/stevens/comments/1ri7x7p/offcampus_parking_situation/ |
+| 6 | Reddit | Older discussion covering overnight parking rules, permits, and alternative parking arrangements around campus. | https://www.reddit.com/r/stevens/comments/p5on9u/overnight_parking/ |
+| 7 | Apartments.com | Overview of off-campus housing options near Stevens, including rental costs, neighborhoods, and apartment availability. | https://www.apartments.com/local-guide/off-campus-housing/nj/hoboken/stevens-institute-of-technology/ |
+| 8 | Walk Score | Quantitative data on walkability, transit accessibility, and bike-friendliness of Hoboken, useful for evaluating commuting options. | https://www.walkscore.com/NJ/Hoboken |
+| 9 | Reddit | Student experiences and administrative considerations when switching from residential to commuter status. | https://www.reddit.com/r/stevens/comments/acryhw/change_dorming_to_commuting/ |
+| 10 | Reddit | Information about obtaining and using NJ Transit student discounts, passes, and commuter benefits. | https://www.reddit.com/r/stevens/comments/1f54e7d/nj_transit_student_pass_assistance_needed/ |
+| 11 | Reddit | Discussion of commuting between New York City and Stevens, including PATH, NJ Transit, travel times, and convenience. | https://www.reddit.com/r/stevens/comments/1hwd40y/nyc_access/ |
+| 12 | Reddit | Student perspectives on campus safety, the surrounding Hoboken neighborhood, walking at night, and general safety considerations for commuters traveling to and from campus | https://www.reddit.com/r/stevens/comments/14rt7wy/how_safe_is_the_campus_and_neighbourhood/ |
 
 ---
 
