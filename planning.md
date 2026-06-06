@@ -9,7 +9,7 @@
 
 ## Domain
 
-I chose the domain "Stevens Institute of Technology Commuter Guide" which covers the practical realities and tips for commuter students at my university from unofficial sources. This knowledge is valuable and hard to find through official channels because they cover general information such as permit prices and transit links, but they do not capture the lived experiences that drive commuter decisions, such as overnight parking locations, commute accessibility, and pros and cons of commuting vs dorming. Personal, specific questions about these experiences and the tradeoffs associated can be answered only by students who have lived through them. Sources about the area could also be useful information.
+I chose the domain "Stevens Institute of Technology Commuter Guide" which covers the practical realities and tips for commuter students at my university from unofficial sources. This knowledge is valuable and hard to find through official channels because they cover general information such as permit prices and transit links, but they do not capture the lived experiences that drive commuter decisions, such as overnight parking locations, commute accessibility, and pros and cons of commuting vs dorming. Personal, specific questions about these experiences and the tradeoffs associated can be answered only by students who have lived through them. Sources about the campus area could also be useful information.
 
 ---
 
@@ -76,11 +76,11 @@ I chose the domain "Stevens Institute of Technology Commuter Guide" which covers
 
 | # | Question | Expected answer |
 |---|----------|-----------------|
-| 1 | | |
-| 2 | | |
-| 3 | | |
-| 4 | | |
-| 5 | | |
+| 1 | How much does the Stevens shuttle cost? | It is free. |
+| 2 | What are the disadvantages of parking with a temporary Hoboken pass? | It can be competitive, and the car should be moved for street cleaning every week or day depending on the parking spot. Oil changes cannot be done when parked on the street. |
+| 3 | When is Hoboken street parking free? | It is free overnight, from 9 PM to 9 AM. |
+| 4 | What is the walkability or walk score of Hoboken? | 97-100. |
+| 5 | Will changing from dorming to commuting affect my financial aid package? | The financial aid package will likely not change since it is based on tuition only. However, it is best to call the school to confirm. |
 
 ---
 
@@ -108,6 +108,8 @@ I chose the domain "Stevens Institute of Technology Commuter Guide" which covers
      You can use ASCII art, a Mermaid diagram, or embed a sketch as an image.
      You'll use this diagram as context when prompting AI tools to implement each stage. -->
 
+![Architecture pipeline diagram](assets/Architecture%20Mermaid%20diagram.png)
+
 ---
 
 ## AI Tool Plan
@@ -122,7 +124,7 @@ I chose the domain "Stevens Institute of Technology Commuter Guide" which covers
      "I'll give Claude my Chunking Strategy section and ask it to implement chunk_text()
      with my specified chunk size and overlap" is a plan. -->
 
-**Milestone 3 — Ingestion and chunking:**
+**Milestone 3 — Ingestion and chunking:** I will give Claude Code my Documents, Chunking Strategy, and Architecture sections to implement chunk_text() with my specified chunk size and overlap. To verify the output, I will print 5 representative chunks and check if they are good chunks.
 
 **Milestone 4 — Embedding and retrieval:**
 
