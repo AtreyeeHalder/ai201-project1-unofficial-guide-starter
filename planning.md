@@ -45,7 +45,7 @@ I chose the domain "Stevens Institute of Technology Commuter Guide" which covers
 
 **Overlap:** 50 tokens
 
-**Reasoning:** The corpus is review and disussion-heavy since it is mostly composed of Reddit threads. Almost every comment in a thread is a complete, retrievable thought, which can either be a few sentences or a paragraph. Thus, I picked a medium chunk size: 400. If the chunk size is too large, several unrelated comments may be included in a single embedding and the vector will not match any of those individual topics well. As a result, more specific, precise prompts may lead to a vague answer. If the chunk size is too small, embeddings may miss important context and be meaningless individually. As a result, answers may be hallucinated, fragmented or inaccurate due to the absence of surrounding context.
+**Reasoning:** The corpus is review and discussion-heavy since it is mostly composed of Reddit threads. Almost every comment in a thread is a complete, retrievable thought, which can either be a few sentences of a short review or a paragraph describing a personal experience. Thus, I picked a medium chunk size: 400. If the chunk size is too large, several unrelated comments may be included in a single embedding and the vector will not match any of those individual topics well. As a result, more specific, precise prompts may lead to a vague answer. If the chunk size is too small, embeddings may miss important context and be meaningless individually. As a result, answers may be hallucinated, fragmented or inaccurate due to the absence of surrounding context. Moreover, I chose a 50-token overlap since it is a small fraction of the chunk, and each chunk tends to capture a complete idea so a heavy overlap is not required to preserve meaning. Even if a small part of a thought gets split at a boundary when chunking, a small split idea remains intact and retrievable through the 50-token overlap. 
 
 ---
 
@@ -57,11 +57,13 @@ I chose the domain "Stevens Institute of Technology Commuter Guide" which covers
      would you weigh in choosing a different embedding model — context length, multilingual
      support, accuracy on domain-specific text, latency? -->
 
-**Embedding model:**
+**Embedding model:** `BAAI/bge-base-en-v1.5` via sentence-transformers
 
-**Top-k:**
+**Top-k:** 5
 
-**Production tradeoff reflection:**
+**Production tradeoff reflection:** If I were deploying this for real users and cost were not a constraint, I would consider a stronger embedding model and weigh several tradeoffs.
+- A larger or API model would better distinguish nuanced, contradicting student opinions than small local models, reducing off-topic retrieval and improving domain-specific text.
+- I would also consider the latency vs. accuracy tradeoff since bigger, more accurate models are slower per query. I would weigh response time against retrieval quality.
 
 ---
 
@@ -88,9 +90,13 @@ I chose the domain "Stevens Institute of Technology Commuter Guide" which covers
      Consider: noisy or inconsistent documents, missing source attribution, off-topic
      retrieval, chunks that split key information across boundaries. -->
 
-1.
+1. **Noisy and contradictory documents:** Since the corpus is mostly Reddit threads, the same question gets many conflicting answers from different students. Retrieval may pull several contradictory chunks, and the generator could either pick one opinion as if it were fact or blend contradictory claims into an incoherent answer.
 
-2.
+2. **Outdated advice:** Some of the advice may be from years ago that may not be accurate or relevant today. The system may generate the answer to a user query and cause a misunderstanding that the information is current.
+
+3. **Off-topic retrieval and lost context from chunking thread comments:** Reddit threads mix jokes and replies that only make sense relative to context or a previous comment. Splitting them into chunks can sever a reply from the comment it answers. This may lead to off-topic answers.
+
+4. **Chunking strategy may not fit all sources perfectly:** In addition to Reddit threads, the corpus also consists of Apartments.com and Walk Score sources, which are structured, fact-heavy pages. The chunk size is too big for sources like these, since it may merge unrelated surrounding text and produce inaccurate answers.
 
 ---
 
