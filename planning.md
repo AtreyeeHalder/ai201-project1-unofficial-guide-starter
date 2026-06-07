@@ -41,11 +41,11 @@ I chose the domain "Stevens Institute of Technology Commuter Guide" which covers
      numbers fit the structure of your documents.
      A review-heavy corpus warrants different chunking than a long FAQ. -->
 
-**Chunk size:** 400 tokens
+**Chunk size:** 175 tokens
 
-**Overlap:** 50 tokens
+**Overlap:** 40 tokens
 
-**Reasoning:** The corpus is review and discussion-heavy since it is mostly composed of Reddit threads. Almost every comment in a thread is a complete, retrievable thought, which can either be a few sentences of a short review or a paragraph describing a personal experience. Thus, I picked a medium chunk size: 400. If the chunk size is too large, several unrelated comments may be included in a single embedding and the vector will not match any of those individual topics well. As a result, more specific, precise prompts may lead to a vague answer. If the chunk size is too small, embeddings may miss important context and be meaningless individually. As a result, answers may be hallucinated, fragmented or inaccurate due to the absence of surrounding context. Moreover, I chose a 50-token overlap since it is a small fraction of the chunk, and each chunk tends to capture a complete idea so a heavy overlap is not required to preserve meaning. Even if a small part of a thought gets split at a boundary when chunking, a small split idea remains intact and retrievable through the 50-token overlap. 
+**Reasoning:** The corpus is review and discussion-heavy since it is mostly composed of Reddit threads. Almost every comment in a thread is a complete, retrievable thought, which can either be a few sentences of a short review or a paragraph describing a personal experience. If the chunk size is too large, several unrelated comments may be included in a single embedding and the vector will not match any of those individual topics well. As a result, more specific, precise prompts may lead to a vague answer. If the chunk size is too small, embeddings may miss important context and be meaningless individually. As a result, answers may be hallucinated, fragmented or inaccurate due to the absence of surrounding context. I initially chose a medium chunk size of 400 tokens, but the corpus turned out to produce only 23 chunks as entire threads collapsed into a single embedding. I therefore decreased the chunk size to 175 tokens, which yields 55 chunks and lands each chunk on roughly one or two comments. Moreover, I chose a 40-token overlap since it is a small fraction of the chunk, and each chunk tends to capture a complete idea so a heavy overlap is not required to preserve meaning. Even if a small part of a thought gets split at a boundary when chunking, a small split idea remains intact and retrievable through the 40-token overlap.
 
 ---
 
