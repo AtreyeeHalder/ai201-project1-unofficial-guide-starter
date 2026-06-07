@@ -124,8 +124,8 @@ I chose the domain "Stevens Institute of Technology Commuter Guide" which covers
      "I'll give Claude my Chunking Strategy section and ask it to implement chunk_text()
      with my specified chunk size and overlap" is a plan. -->
 
-**Milestone 3 — Ingestion and chunking:** I will give Claude Code my Documents, Chunking Strategy, and Architecture sections to implement chunk_text() with my specified chunk size and overlap. To verify the output, I will print 5 representative chunks and check if they are good chunks.
+**Milestone 3 — Ingestion and chunking:** I will give Claude Code my Documents, Chunking Strategy, and Architecture sections of the planning.md to implement chunk_text() with my specified chunk size and overlap. To verify the output, I will print 5 representative chunks and check if they are good chunks.
 
-**Milestone 4 — Embedding and retrieval:**
+**Milestone 4 — Embedding and retrieval:** I will give Claude Code my Retrieval Approach section and pipeline diagram to implement embedding and retrieval with the embedding model `BAAI/bge-base-en-v1.5` via sentence-transformers, storing in ChromaDB with source metadata, and top-k value 5. To verify the output, I will test retrieval with 3 of my Evauation Plan queries, printing the returned chunks and their distance scores, and checking if the retrieved answers are relevant to the question.
 
 **Milestone 5 — Generation and interface:**
