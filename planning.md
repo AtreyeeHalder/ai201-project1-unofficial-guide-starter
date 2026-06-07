@@ -79,7 +79,7 @@ I chose the domain "Stevens Institute of Technology Commuter Guide" which covers
 | 1 | How much does the Stevens shuttle cost? | It is free. |
 | 2 | What are the disadvantages of parking with a temporary Hoboken pass? | It can be competitive, and the car should be moved for street cleaning every week or day depending on the parking spot. Oil changes cannot be done when parked on the street. |
 | 3 | When is Hoboken street parking free? | It is free overnight, from 9 PM to 9 AM. |
-| 4 | What is the walkability or walk score of Hoboken? | 97-100. |
+| 4 | What is the walkability or walk score of Hoboken? | Any number between 97-100. |
 | 5 | Will changing from dorming to commuting affect my financial aid package? | The financial aid package will likely not change since it is based on tuition only. However, it is best to call the school to confirm. |
 
 ---
