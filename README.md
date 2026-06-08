@@ -194,4 +194,17 @@ I chose this model mainly because it runs fully local and free. There is no API 
 
 ## Demo Video
 
-I will try to attach one later as I am having technical issues at the moment. I apologize for this.
+Google Drive link: https://drive.google.com/file/d/1HQx1OBfdwaFcW5CDe3hh_CH_JiJlYAwP/view?usp=drive_link
+
+Due to technical difficulties, I was unable to record audio for the demo video. The video covers the following parts:
+The first few seconds of the video shows the system prompt passed to the generator
+**PART 1:** Using Terminal - `python generator.py "your query"`
+QUERY 1: What is the walkability or walk score of Hoboken?
+The LLM was successful in generating an accurate answer since the retrieved chunks were relevant (distance < 0.5 with relevant top sources like Walk Score) and the answer was as expected.
+QUERY 2: When is Hoboken street parking free?
+The LLM failed at this question, giving a partially accurate answer due to considering outdated advice, which was true years ago but not anymore, as a fact confidently.
+**PART 2:** Using Gradio web UI - `python app.py`
+QUERY 3: How much will it rain tomorrow, on June 8, 2026?
+This demonstrates Gradio UI, and the loading screen shown to the user while the LLM is generating a response. Here, the LLM correctly indicates that there is no information on this topic in the sources, showing the refusal response.
+**PART 3:** Evaluation Report table walkthrough
+Test queries 1, 2, 4, 5 all retrieve relevant chunks (distance < 0.5) and have accurate reponses (matches expected answer) with links to sources and references to them using numbers [1], [2] etc. Test query 3 is a question where the LLM fails because of outdated advice and not having the date of the Reddit comments as context. Test query 5 correctly shows the existence of uncertainty instead of confidently asserting unverified statements.
