@@ -192,6 +192,46 @@ I chose this model mainly because it runs fully local and free. There is no API 
 
 ---
 
+## Example Responses
+
+======================================================================
+GROUNDED GENERATION REPORT
+======================================================================
+Generation model : llama-3.3-70b-versatile (Groq)
+Temperature      : 0.1
+Relevance gate   : distance <= 0.8
+
+======================================================================
+QUERY: When is Hoboken street parking free?
+======================================================================
+Hoboken street parking is free from 9pm to 9am (and on Sundays) [1], and meters aren’t checked overnight in metered zones off campus from 9pm until sometime in the morning [2].
+
+**Sources**
+1. [Reddit r/stevens — Overnight Parking](https://www.reddit.com/r/stevens/comments/p5on9u/overnight_parking/)
+2. [Reddit r/stevens — Where Can I Park Overnight For Free](https://www.reddit.com/r/stevens/comments/1g8gnag/where_can_i_park_overnight_for_free/)
+3. [Reddit r/stevens — Offcampus Parking Situation](https://www.reddit.com/r/stevens/comments/1ri7x7p/offcampus_parking_situation/)
+4. [Walk Score — Hoboken](https://www.walkscore.com/NJ/Hoboken)
+
+[grounded on 5 chunks | distances: 0.303, 0.306, 0.324, 0.375, 0.380]
+
+======================================================================
+QUERY: What is the walk score of Hoboken?
+======================================================================
+The Walk Score of Hoboken is 97 [1], [1], indicating that Hoboken is a "Walker’s Paradise" where "Daily errands do not require a car" [1].
+
+**Sources**
+1. [Walk Score — Hoboken](https://www.walkscore.com/NJ/Hoboken)
+2. [Apartments.com — Stevens Institute Of Technology](https://www.apartments.com/local-guide/off-campus-housing/nj/hoboken/stevens-institute-of-technology/)
+
+[grounded on 5 chunks | distances: 0.188, 0.331, 0.340, 0.350, 0.367]
+
+======================================================================
+QUERY: How much is it going to rain tomorrow in Hoboken on June 8, 2026?
+======================================================================
+I don't have enough information on that.
+
+---
+
 ## Demo Video
 
 Google Drive link: https://drive.google.com/file/d/1HQx1OBfdwaFcW5CDe3hh_CH_JiJlYAwP/view?usp=drive_link
