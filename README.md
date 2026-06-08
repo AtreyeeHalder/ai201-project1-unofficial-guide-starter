@@ -189,3 +189,9 @@ I chose this model mainly because it runs fully local and free. There is no API 
 - *What I gave the AI:* I gave Claude Code my planning.md pipeline diagram to generate the generation and interface code with my grounding requirement (answering only from document context), the output format, and Gradio web UI skeleton structure for the query interface. The LLM used for this step will be Groq's `llama-3.3-70b-versatile`.
 - *What it produced:* It generated the generation and interface code within generator.py using my grounding requirements to construct the system prompt and the Gradio web UI within app.py
 - *What I changed or overrode:* To verify the output, I tested grounded generation end-to-end on 3 queries. A few seconds elapsed between the user entering the query and the LLM generating the output in the UI, but there was no visible loading signal during that time, which might have led to the user thinking the system was frozen. So, I asked Claude Code to add a feature where a loading message is shown at that time.
+
+---
+
+## Demo Video
+
+I will try to attach one later as I am having technical issues at the moment. I apologize for this.
