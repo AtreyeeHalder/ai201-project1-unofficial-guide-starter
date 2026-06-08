@@ -24,13 +24,18 @@ can't be dropped, hallucinated, or mis-formatted by the LLM. (The prompt still
 asks the model to cite inline [1]/[2] markers for readability, but those are a
 convenience layered on top of the guaranteed list — not the source of truth.)
 
-Run directly to test grounded generation end-to-end on 2 in-domain Evaluation
-Plan queries plus 1 out-of-domain query that should trigger a refusal.
+Run directly to test grounded generation end-to-end. With no arguments it
+exercises all 5 in-domain Evaluation Plan queries plus 1 out-of-domain query
+that should trigger a refusal. Pass one or more questions on the command line
+to test those instead, e.g.:
+
+    python generator.py "When is Hoboken street parking free?"
 """
 
 from __future__ import annotations
 
 import os
+import sys
 from dataclasses import dataclass, field
 from functools import lru_cache
 from typing import List, Optional
@@ -295,18 +300,21 @@ def answer_query(query: str) -> str:
 # ---------------------------------------------------------------------------
 # Verification entry point — grounded generation on in-domain + out-of-domain queries
 # ---------------------------------------------------------------------------
-# Two in-domain queries from the Evaluation Plan, plus one deliberately
+# All 5 in-domain queries from the Evaluation Plan, plus one deliberately
 # out-of-domain question the corpus doesn't cover — the system should refuse
 # ("I don't have enough information on that.") rather than answer from general
 # knowledge. This exercises both the relevance gate and the prompt contract.
 _VERIFICATION_QUERIES = [
+    "How much does the Stevens shuttle cost?",
+    "What are the disadvantages of parking with a temporary Hoboken pass?",
     "When is Hoboken street parking free?",
-    "What is the walk score of Hoboken?",
+    "What is the walkability or walk score of Hoboken?",
+    "Will changing from dorming to commuting affect my financial aid package?",
     "How much is it going to rain tomorrow in Hoboken on June 8, 2026?",
 ]
 
 
-def _print_generation_report() -> None:
+def _print_generation_report(queries: List[str]) -> None:
     print("=" * 70)
     print("GROUNDED GENERATION REPORT")
     print("=" * 70)
@@ -314,7 +322,7 @@ def _print_generation_report() -> None:
     print(f"Temperature      : {GENERATION_TEMPERATURE}")
     print(f"Relevance gate   : distance <= {RELEVANCE_MAX_DISTANCE}")
 
-    for query in _VERIFICATION_QUERIES:
+    for query in queries:
         result = generate_answer(query)
         print("\n" + "=" * 70)
         print(f"QUERY: {query}")
@@ -326,7 +334,11 @@ def _print_generation_report() -> None:
 
 
 def main() -> None:
-    _print_generation_report()
+    # Any questions passed on the command line override the default suite, so you
+    # can spot-check a single Evaluation Plan question (or anything else) without
+    # editing this file.
+    queries = sys.argv[1:] or _VERIFICATION_QUERIES
+    _print_generation_report(queries)
 
 
 if __name__ == "__main__":
