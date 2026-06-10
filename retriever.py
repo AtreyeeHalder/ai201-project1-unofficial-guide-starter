@@ -199,11 +199,13 @@ def retrieve(query: str, top_k: int = TOP_K) -> List[RetrievedChunk]:
 # ---------------------------------------------------------------------------
 # Verification entry point
 # ---------------------------------------------------------------------------
-# 3 questions drawn from the Evaluation Plan in planning.md.
+# All 5 questions from the Evaluation Plan in planning.md.
 _VERIFICATION_QUERIES = [
     "How much does the Stevens shuttle cost?",
+    "What are the disadvantages of parking with a temporary Hoboken pass?",
     "When is Hoboken street parking free?",
-    "What is the walk score of Hoboken?",
+    "What is the walkability or walk score of Hoboken?",
+    "Will changing from dorming to commuting affect my financial aid package?",
 ]
 
 
